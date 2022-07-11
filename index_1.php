@@ -63,7 +63,11 @@ require_once("include/navbar.php")
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Senin </h5>
+              <h5 class="card-title"><?php
+                                      $mydate = getdate(date("U"));
+                                      echo "$mydate[weekday]"
+                                      ?>
+              </h5>
               <P>26-June-2022</P>
               <p>Pagi</p>
               <button type="button" class="btn btn-secondary">Absent avabile at 05.00-07.00</button>
