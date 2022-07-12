@@ -1,3 +1,11 @@
+<?php
+require_once("include/connect.php");
+
+
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -93,7 +101,7 @@
       passsword = document.getElementById("password").value
 
 
-
+      
 
     }
 
