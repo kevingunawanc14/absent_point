@@ -18,10 +18,7 @@ require_once("include/navbar.php")
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <title>Home</title>
 </head>
@@ -33,7 +30,8 @@ require_once("include/navbar.php")
   <div class="container mt-5">
     <div class="row">
       <div class="col">
-        <center><img src="assets/Iron_1_Rank.png" alt=""></center>
+        <!-- <center><img src="assets/Iron_1_Rank.png" alt=""></center> -->
+        <center><i class="fa-solid fa-cow fa-4x"></i></center>
         <h1 style="text-align: center; ">IRON 1</h1>
         <div class="progress">
           <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
