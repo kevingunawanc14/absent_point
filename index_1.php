@@ -27,6 +27,8 @@ date_default_timezone_set("Asia/Jakarta");
 
 <body>
 
+  
+
 
   <!-- rank -->
   <div class="container mt-5">
@@ -43,7 +45,7 @@ date_default_timezone_set("Asia/Jakarta");
     </div>
     <div class="row">
       <div class="col">
-        <p>RANK RATING <span style="float: right;" id="angkaRating">0/0</span></p>
+        <p>RANK RATING <span style="float: right;" id="angkaRating">0</span></p>
 
       </div>
 
