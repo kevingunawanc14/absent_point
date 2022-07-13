@@ -1,3 +1,11 @@
+<?php
+require_once("include/connect.php");
+
+
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -57,16 +65,16 @@
         <h2 class="mt-5" style="text-align: center;">Sign in</h2>
 
         <div class="form-floating mb-3 mx-5">
-          <input type="username" class="form-control" id="floatingInput" placeholder="USERNAME">
+          <input type="username" class="form-control" id="username" placeholder="USERNAME">
           <label for="floatingInput" style="font-weight:bold;color: #828282;">USERNAME</label>
         </div>
         <div class="form-floating mx-5">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="PASSWORD">
+          <input type="password" class="form-control" id="password" placeholder="PASSWORD">
           <label for="floatingPassword" style="font-weight:bold; color: #828282;">PASSWORD</label>
         </div>
 
 
-        <center><a href="index.php"><button type="button" class="btn btn-danger mb-5" style="margin-top: 45vh; width: 60px; height: 60px;border-radius: 17px;"><i class="fas fa-arrow-right"></i></button></center></a>
+        <center><a href="index_1.php" ><button type="button" class="btn btn-danger mb-5" style="margin-top: 45vh; width: 60px; height: 60px;border-radius: 17px;" onclick="login()"><i class="fas fa-arrow-right"></i></button></center></a>
 
 
         <a href="create_account.php" style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;"><p>CREATE ACCOUNT</p> </a>
@@ -86,7 +94,18 @@
 
 
 
+  <script>
+    function login(){
 
+      username = document.getElementById("username").value
+      passsword = document.getElementById("password").value
+
+
+      
+
+    }
+
+  </script>
 
 
 
