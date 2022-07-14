@@ -1,3 +1,6 @@
+<?php 
+require_once("include/navbar.php"); 
+?>
 <!doctype html>
 <html lang="en">
 

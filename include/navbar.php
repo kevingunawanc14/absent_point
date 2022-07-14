@@ -20,7 +20,7 @@ echo
           <a class="nav-link" aria-current="page" href="how_to_play.php">HOW TO PLAY</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">LOGOUT</a>
+          <a class="nav-link" href="login.php">LOGOUT</a>
         </li>
 
 
