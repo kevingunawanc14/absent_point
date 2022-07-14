@@ -11,13 +11,13 @@ echo
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">LEADERBOARD</a>
+          <a class="nav-link" aria-current="page" href="leaderboard.php">LEADERBOARD</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">CAREER</a>
+          <a class="nav-link" aria-current="page" href="career.php">CAREER</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">HOW TO PLAY</a>
+          <a class="nav-link" aria-current="page" href="how_to_play.php">HOW TO PLAY</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">LOGOUT</a>
