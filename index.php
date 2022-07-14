@@ -1,5 +1,7 @@
 <?php
-require_once("include/navbar.php")
+require_once("include/navbar.php");
+date_default_timezone_set("Asia/Jakarta");
+
 
 
 
@@ -18,32 +20,32 @@ require_once("include/navbar.php")
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <title>Home</title>
 </head>
 
 <body>
 
+  
+
 
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
       <div class="col">
-        <center><img src="assets/Iron_1_Rank.png" alt=""></center>
-        <h1 style="text-align: center; ">IRON 1</h1>
+        <!-- <center><img src="assets/Iron_1_Rank.png" alt=""></center> -->
+        <center><i class="fa-solid fa-cow"></i></center>
+        <h3 style="text-align: center; ">COW 1</h3>
         <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div id="rating" data-rating="0" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="O" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
 
     </div>
     <div class="row">
       <div class="col">
-        <p>RANK RATING <span style="float: right;">83/100</span></p>
+        <p>RANK RATING <span style="float: right;" id="angkaRating">0</span></p>
 
       </div>
 
@@ -63,14 +65,124 @@ require_once("include/navbar.php")
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Senin </h5>
-              <P>26-June-2022</P>
+              <h5 class="card-title">
+                <?php
+                $mydate = getdate(date("U"));
+                echo "$mydate[weekday]"
+                ?>
+              </h5>
+
+              <p>
+                <?php
+                echo date("d-M-Y");
+                ?>
+              </p>
+
+
+              <?php
+              $waktu_sekarang = date("H");
+              $pagi = "Morning";
+              $siang = "Afternoon";
+              $malam = "Night";
+
+              if ($waktu_sekarang >= 5 && $waktu_sekarang <= 7) {
+                echo
+
+                "
+                  
+                  <p>$pagi</p>
+  
+                  <button type='button' class='btn btn-success mb-3' onclick='absent()'  >Absent avabile at 05.00 - 07.00</button>
+                  
+                  <p>$siang</p>
+  
+                  <button type='button' class='btn btn-danger mb-3' disabled >Absent avabile at 11.00 - 13.00</button>
+                  
+  
+                  <p>$malam</p>
+                  
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 17.00 - 19.00</button>
+
+       
+                  ";
+              } else if ($waktu_sekarang >= 11 && $waktu_sekarang <= 13) {
+                echo
+
+                "
+                  
+                  <p>$pagi</p>
+  
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 05.00 - 07.00</button>
+                  
+                  <p>$siang</p>
+  
+                  <button type='button' class='btn btn-success mb-3' onclick='absent()'   >Absent avabile at 11.00 - 13.00</button>
+                  
+  
+                  <p>$malam</p>
+                  
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 17.00 - 19.00</button>
+
+       
+                  ";
+              } else if ($waktu_sekarang >= 17 && $waktu_sekarang <= 20) {
+                echo
+
+                "
+                  
+                  <p>$pagi</p>
+  
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 05.00 - 07.00</button>
+                  
+                  <p>$siang</p>
+  
+                  <button type='button' class='btn btn-danger mb-3'   disabled >Absent avabile at 11.00 - 13.00</button>
+                  
+  
+                  <p>$malam</p>
+                  
+                  <button type='button' class='btn btn-success mb-3' onclick='absent()'  >Absent avabile at 17.00 - 19.00</button>
+
+       
+                  ";
+              } else {
+                echo
+
+                "
+                  
+                  <p>$pagi</p>
+  
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 05.00 - 07.00</button>
+                  
+                  <p>$siang</p>
+  
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 05.00 - 07.00</button>
+                  
+  
+                  <p>$malam</p>
+                  
+                  <button type='button' class='btn btn-danger mb-3'   disabled  >Absent avabile at 05.00 - 07.00</button>
+
+       
+                  ";
+              }
+
+
+
+
+
+
+              ?>
+
+              <!-- <P>26-June-2022</P>
               <p>Pagi</p>
-              <button type="button" class="btn btn-secondary">Absent avabile at 05.00-07.00</button>
+              <button type="button" class="btn btn-secondary" data-jam="" >Absent avabile at 05.00-07.00</button>
               <p>Siang</p>
-              <button type="button" class="btn btn-secondary">Absent avabile at 11.00-13.00</button>
+              <button type="button" class="btn btn-secondary" data-jam="11.00" onclick='absent(this.getAttribute("data-jam"))' >Absent avabile at 11.00-13.00</button>
               <p>Malam</p>
-              <button type="button" class="btn btn-secondary">Absenxxxt avabile at 17.00-20.00</button>
+              <button type="button" class="btn btn-secondary" data-jam="17.00" onclick="absent(this.getAttribute('data-jam'))">Absent avabile at 17.00-20.00</button> -->
+
+
             </div>
           </div>
 
@@ -89,27 +201,49 @@ require_once("include/navbar.php")
 </body>
 
 
-<?php
+<!-- <?php
 
-echo "marow <br>";
-date_default_timezone_set("Asia/Jakarta");
-echo "Today is " . date("Y/m/d") . "<br>";
-echo "The time is " . date("H:i:s");
+      echo "marow <br>";
+      date_default_timezone_set("Asia/Jakarta");
+      echo "Today is " . date("Y/m/d") . "<br>";
+      echo "The time is " . date("H:i:s");
 
-echo "<br>";
+      echo "<br>";
 
-$pagi = date("H") - 07;
-// $malam =
-// $siang =
+      $pagi = date("H") - 07;
+      // $malam =
+      // $siang =
 
-echo $pagi;
+      echo $pagi;
 
-?>
-
-
+      ?> -->
 
 
 
+
+<script>
+
+  function absent() {
+    
+    const data = document.querySelector('#rating');
+    
+
+    dataRating = parseInt(data.dataset.rating);
+    
+
+    dataRating += parseInt(Math.floor(Math.random() * 4) + 10);
+
+    document.getElementById("angkaRating").innerHTML = dataRating+"/100"
+
+    dataRating = document.getElementById("rating").style.width = dataRating+"%";
+
+
+    
+
+  }
+
+
+</script>
 
 
 
