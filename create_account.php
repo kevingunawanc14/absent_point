@@ -12,7 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
-  <title>Create Account check</title>
+  <title>Create Account</title>
 </head>
 <style>
   .bgLogin {
@@ -54,7 +54,7 @@
 
 
 
-        <h2 class="mt-5" style="text-align: center;">Create Account</h2>
+        <h2 class="mt-5" style="text-align: center;">Create Account Check</h2>
 
         <div class="form-floating mb-3 mx-5">
           <input id="username" type="username" class="form-control" id="floatingInput" placeholder="USERNAME">
@@ -66,9 +66,9 @@
         </div>
 
 
-        <center><a href="index.php"><button type="button" class="btn btn-danger mb-5" style="margin-top: 45vh; width: 60px; height: 60px;border-radius: 17px;"><i class="fas fa-arrow-right"></i></button></center></a>
+        <center><a ><button type="button" class="btn btn-danger mb-5" style="margin-top: 45vh; width: 60px; height: 60px;border-radius: 17px;" onclick="createAccount()" ><i class="fas fa-arrow-right"></i></button></center></a>
 
-        <a style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;" onclick="createAccount()">
+        <a href="login.php" style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;" >
           <p>SIGN IN</p>
         </a>
 
@@ -95,17 +95,23 @@
 
     function createAccount() {
 
-      let username = document.getElementById("nameAdd").value
+      let username = document.getElementById("username").value
       let password = document.getElementById("password").value
 
+     
       let DataAkun = new FormData();
       DataAkun.append("username", username);
       DataAkun.append("password", password);
 
+
+     
+
       const xmlHttp = new XMLHttpRequest();
       xmlHttp.onload = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-          alert("yo")
+            
+            alert(this.responseText);
+
 
         } else {
           alert("Error!");

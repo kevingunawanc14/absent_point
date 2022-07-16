@@ -1,8 +1,9 @@
 <?php
-
+require_once '../includes/connect.php';
 
 $username = $_POST["username"];
 $password = $_POST["password"]; 
+
 
 
 
@@ -21,28 +22,36 @@ if(strlen($username) > 20){
 
 // cek username
 $sql = 'SELECT * FROM user';
-$checksql = $pdo->prepare();
+$checksql = $pdo->prepare($sql);
 $checksql->execute();
-
-$row = $checksql->fetch();
 
 
 while ($row = $checksql->fetch()) {
 
-    // cek username
+    
+
+
     if ($row['nama'] ==  $username) {
-        echo "Maaf Username Tersebut Sudah Terpakai";
-        exit("");
+
+        exit("Maaf Username Tersebut Sudah Terpakai");
+
     }
 
 }
 
 
+
+
+
+
 // add username,password ke database
 $sql = 'INSERT INTO `user`(`id`, `nama`, `password`, `rank`, `rating`) VALUES (NULL, ?, ?, ?, ?)';
 $checksql = $pdo->prepare($sql);
-$checksql->execute([$username, $password, 0]);
+$checksql->execute([$username, $password, "COW 1", 0]);
 
+
+
+exit ("Akun Berhasil Di Buat Silakan Login");
 
 
 
