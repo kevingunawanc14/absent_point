@@ -12,7 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
-  <title>Create Account</title>
+  <title>Create Account check</title>
 </head>
 <style>
   .bgLogin {
@@ -24,7 +24,7 @@
     min-height: 200px;
   }
 
-  .fa-fist-raised{
+  .fa-fist-raised {
     color: red;
   }
 </style>
@@ -36,14 +36,14 @@
     <div class="row" style="min-height: 100vh;">
       <div class="col-12 col-lg-4" style="background-color: #f9f9f9;">
 
-      
+
         <div class="row">
           <div class="col-6 col-lg-5">
             <i class="fas fa-fist-raised mt-5 fa-4x" style="float: right;"></i>
           </div>
           <div class="col-6 col-lg-7">
             <h3 class="mt-5" style="color: red; font-weight: bold;"> ABSENT </h3>
-            <h3  style="color: red; font-weight: bold;">POINT</h3>
+            <h3 style="color: red; font-weight: bold;">POINT</h3>
           </div>
         </div>
 
@@ -57,18 +57,20 @@
         <h2 class="mt-5" style="text-align: center;">Create Account</h2>
 
         <div class="form-floating mb-3 mx-5">
-          <input type="username" class="form-control" id="floatingInput" placeholder="USERNAME">
+          <input id="username" type="username" class="form-control" id="floatingInput" placeholder="USERNAME">
           <label for="floatingInput" style="font-weight:bold;color: #828282;">USERNAME</label>
         </div>
         <div class="form-floating mx-5">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="PASSWORD">
+          <input id="password" type="password" class="form-control" id="floatingPassword" placeholder="PASSWORD">
           <label for="floatingPassword" style="font-weight:bold; color: #828282;">PASSWORD</label>
         </div>
 
 
         <center><a href="index.php"><button type="button" class="btn btn-danger mb-5" style="margin-top: 45vh; width: 60px; height: 60px;border-radius: 17px;"><i class="fas fa-arrow-right"></i></button></center></a>
 
-        <a href="login.php" style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;"><p>SIGN IN</p></a>
+        <a style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;" onclick="createAccount()">
+          <p>SIGN IN</p>
+        </a>
 
 
       </div>
@@ -89,7 +91,32 @@
 
 
 
+  <script>
 
+    function createAccount() {
+
+      let username = document.getElementById("nameAdd").value
+      let password = document.getElementById("password").value
+
+      let DataAkun = new FormData();
+      DataAkun.append("username", username);
+      DataAkun.append("password", password);
+
+      const xmlHttp = new XMLHttpRequest();
+      xmlHttp.onload = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+          alert("yo")
+
+        } else {
+          alert("Error!");
+        }
+      }
+      xmlHttp.open("POST", "request/create_account_ajax.php");
+      xmlHttp.send(DataAkun);
+
+    }
+
+  </script>
 
 
 
