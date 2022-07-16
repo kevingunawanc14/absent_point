@@ -1,11 +1,6 @@
 <?php
 require_once("include/navbar.php");
 date_default_timezone_set("Asia/Jakarta");
-
-
-
-
-
 ?>
 
 <!doctype html>
@@ -224,21 +219,22 @@ date_default_timezone_set("Asia/Jakarta");
 <script>
 
   function absent() {
-    
+
     const data = document.querySelector('#rating');
     
-
     dataRating = parseInt(data.dataset.rating);
     
-
     dataRating += parseInt(Math.floor(Math.random() * 4) + 10);
 
     document.getElementById("angkaRating").innerHTML = dataRating+"/100"
 
     dataRating = document.getElementById("rating").style.width = dataRating+"%";
 
-
+    data.dataset.rating = dataRating;
     
+    // console.log(data.dataset.rating);
+
+    location.replace("index.php?stat=1;rating=10");
 
   }
 
