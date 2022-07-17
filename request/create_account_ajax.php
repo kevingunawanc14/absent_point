@@ -29,8 +29,6 @@ $checksql->execute();
 while ($row = $checksql->fetch()) {
 
     
-
-
     if ($row['nama'] ==  $username) {
 
         exit("Maaf Username Tersebut Sudah Terpakai");
