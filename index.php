@@ -1,6 +1,17 @@
 <?php
-require_once("include/navbar.php");
-date_default_timezone_set("Asia/Jakarta");
+  require_once("include/navbar.php");
+  require_once("include/connect.php");
+  date_default_timezone_set("Asia/Jakarta");
+
+  if (!isset($_SESSION["username"])) {
+    echo ('<script> location.replace("login.php"); </script>');;
+  }
+
+  if (isset($_GET["stat"])) {
+    if ($_GET["stat"] == 0) {
+      echo "SUCCESS"; 
+    }
+  }
 ?>
 
 <!doctype html>
@@ -21,10 +32,6 @@ date_default_timezone_set("Asia/Jakarta");
 </head>
 
 <body>
-
-  
-
-
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
@@ -36,20 +43,15 @@ date_default_timezone_set("Asia/Jakarta");
           <div id="rating" data-rating="0" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="O" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
-
     </div>
     <div class="row">
       <div class="col">
         <p>RANK RATING <span style="float: right;" id="angkaRating">0</span></p>
-
       </div>
-
     </div>
   </div>
 
-
   <!-- tanggal -->
-
   <div class="container">
     <!-- <div class="row">
       <h1>June</h1>
@@ -57,7 +59,6 @@ date_default_timezone_set("Asia/Jakarta");
     <div class="row">
       <center>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-2">
-
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
@@ -79,6 +80,9 @@ date_default_timezone_set("Asia/Jakarta");
               $pagi = "Morning";
               $siang = "Afternoon";
               $malam = "Night";
+
+              // pengecekkan biar gak bisa double
+              
 
               if ($waktu_sekarang >= 5 && $waktu_sekarang <= 7) {
                 echo
@@ -156,18 +160,11 @@ date_default_timezone_set("Asia/Jakarta");
   
                   <p>$malam</p>
                   
-                  <button type='button' class='btn btn-danger mb-3'   disabled  >Absent avabile at 05.00 - 07.00</button>
+                  <button type='button' class='btn btn-danger mb-3'  onclick='absent()'  >Absent avabile at 05.00 - 07.00</button>
 
        
                   ";
-              }
-
-
-
-
-
-
-              ?>
+              } ?>
 
               <!-- <P>26-June-2022</P>
               <p>Pagi</p>
@@ -177,74 +174,51 @@ date_default_timezone_set("Asia/Jakarta");
               <p>Malam</p>
               <button type="button" class="btn btn-secondary" data-jam="17.00" onclick="absent(this.getAttribute('data-jam'))">Absent avabile at 17.00-20.00</button> -->
 
-
             </div>
           </div>
-
         </div>
       </center>
-
-
-
-
-
-
-
     </div>
   </div>
-
 </body>
 
 
 <!-- <?php
+  echo "marow <br>";
+  date_default_timezone_set("Asia/Jakarta");
+  echo "Today is " . date("Y/m/d") . "<br>";
+  echo "The time is " . date("H:i:s");
 
-      echo "marow <br>";
-      date_default_timezone_set("Asia/Jakarta");
-      echo "Today is " . date("Y/m/d") . "<br>";
-      echo "The time is " . date("H:i:s");
+  echo "<br>";
 
-      echo "<br>";
+  $pagi = date("H") - 07;
+  // $malam =
+  // $siang =
 
-      $pagi = date("H") - 07;
-      // $malam =
-      // $siang =
-
-      echo $pagi;
-
-      ?> -->
-
-
-
+  echo $pagi;
+?> -->
 
 <script>
-
   function absent() {
-
     const data = document.querySelector('#rating');
-    
+
+    // get data attribute
     dataRating = parseInt(data.dataset.rating);
-    
+    // tambah data sesuai random-an
     dataRating += parseInt(Math.floor(Math.random() * 4) + 10);
-
+    // update angka progress bar
     document.getElementById("angkaRating").innerHTML = dataRating+"/100"
-
+    // update panjang progress bar
+    var temp = dataRating;
     dataRating = document.getElementById("rating").style.width = dataRating+"%";
-
+    // update data attribute
     data.dataset.rating = dataRating;
-    
-    // console.log(data.dataset.rating);
 
-    location.replace("index.php?stat=1;rating=10");
-
+    location.replace("get_absent.php?poin=" + temp);
   }
-
-
 </script>
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 
 </body>
 
