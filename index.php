@@ -1,15 +1,22 @@
 <?php
   require_once("include/navbar.php");
   require_once("include/connect.php");
+
   date_default_timezone_set("Asia/Jakarta");
 
+  // jika belum log in
   if (!isset($_SESSION["username"])) {
     echo ('<script> location.replace("login.php"); </script>');;
   }
 
   if (isset($_GET["stat"])) {
-    if ($_GET["stat"] == 0) {
+    
+    if ($_GET["stat"] == 0) { // jika berhasil absen
       echo "SUCCESS"; 
+    } else if ($_GET["stat"] == 1) {
+      // jika waktu absen tidak sesuai
+    } else if ($_GET["stat"] == 2) {
+      // jika sudah pernah absen di waktu itu
     }
   }
 ?>
@@ -36,7 +43,6 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col">
-        <!-- <center><img src="assets/Iron_1_Rank.png" alt=""></center> -->
         <center><i class="fa-solid fa-cow"></i></center>
         <h3 style="text-align: center; ">COW 1</h3>
         <div class="progress">
@@ -63,16 +69,12 @@
             <div class="card-body">
               <h5 class="card-title">
                 <?php
-                $mydate = getdate(date("U"));
-                echo "$mydate[weekday]"
+                  $mydate = getdate(date("U"));
+                  echo "$mydate[weekday]";
                 ?>
               </h5>
 
-              <p>
-                <?php
-                echo date("d-M-Y");
-                ?>
-              </p>
+              <p><?php echo date("d-M-Y"); ?></p>
 
 
               <?php
@@ -80,9 +82,6 @@
               $pagi = "Morning";
               $siang = "Afternoon";
               $malam = "Night";
-
-              // pengecekkan biar gak bisa double
-              
 
               if ($waktu_sekarang >= 5 && $waktu_sekarang <= 7) {
                 echo
@@ -97,13 +96,12 @@
   
                   <button type='button' class='btn btn-danger mb-3' disabled >Absent avabile at 11.00 - 13.00</button>
                   
-  
                   <p>$malam</p>
                   
                   <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 17.00 - 19.00</button>
 
-       
-                  ";
+                ";
+
               } else if ($waktu_sekarang >= 11 && $waktu_sekarang <= 13) {
                 echo
 
