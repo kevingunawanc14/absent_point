@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 
 
 
@@ -22,15 +21,12 @@
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
     <title>Home</title>
-
-
 </head>
 
 <body>
+
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -59,6 +55,87 @@
             </div>
         </div>
     </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" style="border: none;">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <p class="mb-5" style="text-align: center; font-weight: bold;">\GET SET UP TO PLAY\</p>
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <p id="kalimatMakeOne" class="mt-2" style="text-align: right; font-size: small;">I don’t have a absent account yet</p>
+                                <center>
+                                    <button id="buttonMakeOne" style="float: right; min-width: 200px;" type="button" class=" btn btn-outline-dark btn-lg mt-1">MAKE ONE</button>
+                                </center>
+                            </div>
+                            <div class="col-12 col-sm-6 ">
+                                <p id="kalimatSignIn" class="mt-2" style="text-align: left; font-size: small;">I have a absent account</p>
+                                <center>
+                                    <button id="buttonSignIn" style="float: left; min-width: 200px;" type="button" class=" btn btn-outline-danger btn-lg mt-1">SIGN IN</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer mb-3" style="border: none;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+<script>
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            document.getElementById("kalimatMakeOne").style.textAlign = "center"
+            document.getElementById("kalimatSignIn").style.textAlign = "center"
+            document.getElementById("buttonMakeOne").style.float = "none"
+            document.getElementById("buttonSignIn").style.float = "none"
+
+
+    
+        } else {
+            document.getElementById("kalimatMakeOne").style.textAlign = "right"
+            document.getElementById("kalimatSignIn").style.textAlign = "left"
+            document.getElementById("buttonMakeOne").style.float = "right"
+            document.getElementById("buttonSignIn").style.float = "left"
+
+            
+
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 600px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
 </body>
