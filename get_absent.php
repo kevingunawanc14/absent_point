@@ -14,8 +14,6 @@
         }
     }
 
-    // pengecekkan duplikat
-
     // echo date("His");
 
     // status pagi, siang, malam
