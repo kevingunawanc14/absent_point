@@ -95,6 +95,39 @@
         </div>
     </div>
 
+    <center style="margin-top: 25vh;">
+        <p>A absent game point-based get reward</p>
+        <h1 class="display-1">ABSENT POINT</h1>
+        <button type="button" class="btn btn-outline-danger">PLAY FREE</button>
+    </center>
+
+    <div class="border-top border-1" style="margin-top: 50vh;">
+
+        <div class="container " >
+            <div class="row">
+                <div class="col ">
+                    <h1 class="display-5 mt-5">WE ARE ABSENT POINT</h1>
+
+
+
+                    <p class="mt-5" style="padding-left: 35px;">GET THE POINT</p>
+                    <p style="padding-left: 35px;">Just absent everday at morning,afternoon,night and get number one in leaderboard and get valorant point reward at the end of the month. At the end of the month the rank of every user will be reset from zero again so we can start the journey from the beggining again and make new user have big opportunity to be number one in leaderboard.</p>
+                    <button type="button" class="btn btn-outline-danger" style="margin-left: 35px;">LEARN THE GAME</button>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div style="margin-top: 100px;">
+        credit
+    </div>
 
 
 
@@ -115,14 +148,14 @@
             document.getElementById("buttonSignIn").style.float = "none"
 
 
-    
+
         } else {
             document.getElementById("kalimatMakeOne").style.textAlign = "right"
             document.getElementById("kalimatSignIn").style.textAlign = "left"
             document.getElementById("buttonMakeOne").style.float = "right"
             document.getElementById("buttonSignIn").style.float = "left"
 
-            
+
 
         }
     }

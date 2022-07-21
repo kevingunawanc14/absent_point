@@ -1,5 +1,5 @@
 <?php
-require_once("include/navbar.php");
+
 
 
 
@@ -22,7 +22,7 @@ require_once("include/navbar.php");
 
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+
   <!-- css datatable -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   </link>
@@ -33,9 +33,39 @@ require_once("include/navbar.php");
 </head>
 
 <body>
-  <center>
-    <h1>ABSENT POINT</h1>
-    <h2>LEADERBOARDS</h2>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fas fa-fist-raised fa-1x"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">LEADERBOARD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">HOW TO PLAY</a>
+          </li>
+
+
+        </ul>
+
+        <form class="d-flex">
+
+          <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">PLAY NOW</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <center class="mt-5">
+    <h1 class="display-5">ABSENT POINT</h1>
+    <h2 class="display-5">LEADERBOARDS</h2>
   </center>
 
   <div class="container">
@@ -45,198 +75,102 @@ require_once("include/navbar.php");
           <thead>
             <tr>
               <th><i class="fa-solid fa-dragon"></i></th>
-              <th>Nama </th>
               <th data-orderable='false'>RANK</th>
-              <th data-orderable='false'>RATING</th>
-              <th data-orderable='false'>REWARD</th>
+              <th data-orderable='false'>NAME </th>
+              <th data-orderable='false' >RATING</th>
+              <th data-orderable='false'>REWARD <i class="fa-solid fa-gift"></i></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_maro</td>
+              <td>10</td>
+              <td>125 VP</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>2</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>3</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>4</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>5</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>6</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>7</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>8</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>9</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>10</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
             <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
+              <td>11</td>
+              <td><i class="fa-solid fa-cow"></td>
+              <td>king_toni</td>
               <td>0</td>
-              <td>0 VP</td>
+              <td>-</td>
 
             </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>test123</td>
-              <td>COW 1</td>
-              <td>0</td>
-              <td>0 VP</td>
-
-            </tr>
-
+            
 
           </tbody>
 
