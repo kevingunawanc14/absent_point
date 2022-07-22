@@ -47,20 +47,21 @@
   }
 
   #login_btn{
-    margin-top: 37.5vh; 
+    margin-top: 45vh;
     width: 60px; 
     height: 60px;
     border-radius: 17px;
   }
 
-  @media screen and (max-width: 992px) {
+  /* @media screen and (max-width: 992px) {
     #login_btn{
       margin-top: 9.5vh;
     }
-  }
+  } */
 </style>
 
-<body style="overflow-y: hidden;">
+<body>
+  <!-- style="overflow-y: hidden;" -->
   <!-- <h1>Login</h1> -->
 
   <div class="container-fluid">
