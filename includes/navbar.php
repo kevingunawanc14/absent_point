@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><i class="fas fa-fist-raised fa-1x"></i></a>
@@ -25,9 +24,21 @@
                     </li>
             </ul>
 
-            <form class="d-flex">
+            <form class="d-flex me-4">
+
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark me-2 rounded-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">ENGLISH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-check "></i></a></li>
+                        <li><a class="dropdown-item" href="#">INDONESIAN <i class="fa-solid fa-check "></i></a></li>
+
+                    </ul>
+                </div>
 
                 <button class="btn btn-outline-dark rounded-pill" type="submit"><?php echo $_SESSION["username"]; ?></button>
+
             </form>
         <?php } else { ?>
             <li class="nav-item">
@@ -38,7 +49,19 @@
                 <a class="nav-link" aria-current="page" href="howtoplay.php">HOW TO PLAY</a>
             </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex me-4">
+
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark me-2 rounded-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">ENGLISH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-check "></i></a></li>
+                        <li><a class="dropdown-item" href="#">INDONESIAN <i class="fa-solid fa-check "></i></a></li>
+
+                    </ul>
+                </div>
+
                 <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">PLAY NOW</button>
             </form>
         <?php } ?>

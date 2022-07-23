@@ -1,6 +1,6 @@
 <?php
 require_once("includes/connect.php");
-require_once("includes/navbar.php");
+
 
 
 
@@ -25,24 +25,27 @@ require_once("includes/navbar.php");
 </head>
 
 <body>
+    <?php
 
-
-
-
-
+    require_once("includes/navbar.php");
     
+    ?>
+
+
+
+
 
     <center style="margin-top: 25vh;">
         <p>A absent game point-based get reward</p>
-    <h1 class="display-1">ABSENT POINT</h1>
-    <?php if (!isset($_SESSION["username"])) { ?>
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" >PLAY FREE</button>
-    <?php } ?>
+        <h1 class="display-1">ABSENT POINT</h1>
+        <?php if (!isset($_SESSION["username"])) { ?>
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">PLAY FREE</button>
+        <?php } ?>
     </center>
 
     <div class="border-top border-1" style="margin-top: 50vh;">
 
-        <div class="container " >
+        <div class="container ">
             <div class="row">
                 <div class="col ">
                     <h1 class="display-5 mt-5">WE ARE ABSENT POINT</h1>
