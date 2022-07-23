@@ -30,7 +30,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fas fa-fist-raised fa-1x"></i></a>
+            <a class="navbar-brand" href="index.php"><i class="fas fa-fist-raised fa-1x"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,10 +38,10 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">LEADERBOARD</a>
+                        <a class="nav-link" aria-current="page" href="leaderboard.php">LEADERBOARD</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">HOW TO PLAY</a>
+                        <a class="nav-link" aria-current="page" href="howtoplay.php">HOW TO PLAY</a>
                     </li>
 
 
@@ -73,13 +73,13 @@
                             <div class="col-12 col-sm-6">
                                 <p id="kalimatMakeOne" class="mt-2" style="text-align: right; font-size: small;">I don’t have a absent account yet</p>
                                 <center>
-                                    <button id="buttonMakeOne" style="float: right; min-width: 200px;" type="button" class=" btn btn-outline-dark btn-lg mt-1">MAKE ONE</button>
+                                    <a href="create_account.php"><button id="buttonMakeOne" style="float: right; min-width: 200px;" type="button" class=" btn btn-outline-dark btn-lg mt-1">MAKE ONE</button></a>
                                 </center>
                             </div>
                             <div class="col-12 col-sm-6 ">
                                 <p id="kalimatSignIn" class="mt-2" style="text-align: left; font-size: small;">I have a absent account</p>
                                 <center>
-                                    <button id="buttonSignIn" style="float: left; min-width: 200px;" type="button" class=" btn btn-outline-danger btn-lg mt-1">SIGN IN</button>
+                                <a href="login.php"><button id="buttonSignIn" style="float: left; min-width: 200px;" type="button" class=" btn btn-outline-danger btn-lg mt-1">SIGN IN</button></a>
                                 </center>
                             </div>
                         </div>
@@ -97,8 +97,8 @@
 
     <center style="margin-top: 25vh;">
         <p>A absent game point-based get reward</p>
-        <h1 class="display-1">ABSENT POINT</h1>
-        <button type="button" class="btn btn-outline-danger">PLAY FREE</button>
+    <h1 class="display-1">ABSENT POINT</h1>
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" >PLAY FREE</button>
     </center>
 
     <div class="border-top border-1" style="margin-top: 50vh;">
@@ -112,7 +112,7 @@
 
                     <p class="mt-5" style="padding-left: 35px;">GET THE POINT</p>
                     <p style="padding-left: 35px;">Just absent everday at morning,afternoon,night and get number one in leaderboard and get valorant point reward at the end of the month. At the end of the month the rank of every user will be reset from zero again so we can start the journey from the beggining again and make new user have big opportunity to be number one in leaderboard.</p>
-                    <button type="button" class="btn btn-outline-danger" style="margin-left: 35px;">LEARN THE GAME</button>
+                    <a href="howtoplay.php"><button type="button" class="btn btn-outline-danger" style="margin-left: 35px;">LEARN THE GAME</button></a>
 
 
 

@@ -1,24 +1,24 @@
 <?php
-  require_once("include/navbar.php");
-  require_once("include/connect.php");
 
-  date_default_timezone_set("Asia/Jakarta");
+require_once("includes/connect.php");
 
-  // jika belum log in
-  if (!isset($_SESSION["username"])) {
-    echo ('<script> location.replace("login.php"); </script>');;
+date_default_timezone_set("Asia/Jakarta");
+
+// jika belum log in
+if (!isset($_SESSION["username"])) {
+  echo ('<script> location.replace("login.php"); </script>');;
+}
+
+if (isset($_GET["stat"])) {
+
+  if ($_GET["stat"] == 0) { // jika berhasil absen
+    echo "SUCCESS";
+  } else if ($_GET["stat"] == 1) {
+    // jika waktu absen tidak sesuai
+  } else if ($_GET["stat"] == 2) {
+    // jika sudah pernah absen di waktu itu
   }
-
-  if (isset($_GET["stat"])) {
-    
-    if ($_GET["stat"] == 0) { // jika berhasil absen
-      echo "SUCCESS"; 
-    } else if ($_GET["stat"] == 1) {
-      // jika waktu absen tidak sesuai
-    } else if ($_GET["stat"] == 2) {
-      // jika sudah pernah absen di waktu itu
-    }
-  }
+}
 ?>
 
 <!doctype html>
@@ -39,6 +39,43 @@
 </head>
 
 <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <i class="fas fa-fist-raised fa-1x"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">ABSENT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">LEADERBOARD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">HOW TO PLAY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">SETTING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">LOGOUT</a>
+          </li>
+
+
+        </ul>
+
+        <form class="d-flex">
+
+          <button class="btn btn-outline-dark rounded-pill" type="submit"><?php echo $_SESSION["username"]; ?></button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
@@ -69,8 +106,8 @@
             <div class="card-body">
               <h5 class="card-title">
                 <?php
-                  $mydate = getdate(date("U"));
-                  echo "$mydate[weekday]";
+                $mydate = getdate(date("U"));
+                echo "$mydate[weekday]";
                 ?>
               </h5>
 
@@ -101,7 +138,6 @@
                   <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 17.00 - 19.00</button>
 
                 ";
-
               } else if ($waktu_sekarang >= 11 && $waktu_sekarang <= 13) {
                 echo
 
@@ -182,19 +218,19 @@
 
 
 <!-- <?php
-  echo "marow <br>";
-  date_default_timezone_set("Asia/Jakarta");
-  echo "Today is " . date("Y/m/d") . "<br>";
-  echo "The time is " . date("H:i:s");
+      echo "marow <br>";
+      date_default_timezone_set("Asia/Jakarta");
+      echo "Today is " . date("Y/m/d") . "<br>";
+      echo "The time is " . date("H:i:s");
 
-  echo "<br>";
+      echo "<br>";
 
-  $pagi = date("H") - 07;
-  // $malam =
-  // $siang =
+      $pagi = date("H") - 07;
+      // $malam =
+      // $siang =
 
-  echo $pagi;
-?> -->
+      echo $pagi;
+      ?> -->
 
 <script>
   function absent() {
@@ -205,10 +241,10 @@
     // tambah data sesuai random-an
     dataRating += parseInt(Math.floor(Math.random() * 4) + 10);
     // update angka progress bar
-    document.getElementById("angkaRating").innerHTML = dataRating+"/100"
+    document.getElementById("angkaRating").innerHTML = dataRating + "/100"
     // update panjang progress bar
     var temp = dataRating;
-    dataRating = document.getElementById("rating").style.width = dataRating+"%";
+    dataRating = document.getElementById("rating").style.width = dataRating + "%";
     // update data attribute
     data.dataset.rating = dataRating;
 

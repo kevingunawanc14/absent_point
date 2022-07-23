@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-  require_once("include/connect.php");
+  require_once("includes/connect.php");
   
   if (isset($_POST["masuk"])) {
     $username = $_POST["_username"];
@@ -11,7 +11,7 @@
     $stmt_get_user = $pdo->query("SELECT * FROM user WHERE nama = '$username' AND `password` = '$password'");
     if ($row = $stmt_get_user->fetch()) {
       $_SESSION["username"] = $username;
-      echo('<script>location.replace("index.php");</script>');
+      echo('<script>location.replace("game.php");</script>');
     } else {
       echo('<script>location.replace("login.php?stat=0");</script>');
     }
