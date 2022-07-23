@@ -1,5 +1,5 @@
 <?php
-    include "include/connect.php";
+    require_once '../includes/connect.php';
 
     $username = $_SESSION["username"];
     $tanggal = date("Y/m/d");
@@ -17,6 +17,7 @@
     // echo date("His");
 
     // status pagi, siang, malam
+        
     $pagi = false; $siang = false; $malam = false;
     if (date("His") >= 50000 && date("His") <= 70000) {
         $pagi = true;
@@ -27,8 +28,10 @@
     } else if (date("His") >= 170000 && date("His") <= 190000) {
         $malam = true;
         echo "malam";
-    } else {
-        echo ('<script> location.replace("index.php?stat=1"); </script>');
+    
+} else {
+  
+        echo ('<script> location.replace("../game.php?stat=1"); </script>');
     }
 
     $stmt_history = $pdo->query("SELECT * FROM history WHERE id_user = $id_user");
@@ -36,11 +39,11 @@
         // change time format from hh:mm:ss -> hhmmss
         $new_time = date("His", strtotime($row["waktu"]));
         if ($pagi && $new_time >= 50000 && $new_time <= 70000) {
-            echo ('<script> location.replace("index.php?stat=2"); </script>');
+            echo ('<script> location.replace("../game.php?stat=2"); </script>');
         } else if ($siang && $new_time >= 110000 && $new_time <= 130000) {
-            echo ('<script> location.replace("index.php?stat=2"); </script>');
+            echo ('<script> location.replace("../game.php?stat=2"); </script>');
         } else if ($malam && $new_time >= 170000 && $new_time <= 190000) {
-            echo ('<script> location.replace("index.php?stat=2"); </script>');
+            echo ('<script> location.replace("../game.php?stat=2"); </script>');
         }
     }
 
@@ -53,8 +56,11 @@
         $sql_update = "UPDATE `user` SET `rating`=(SELECT rating FROM user WHERE id = $id_user)+$rating WHERE id = $id_user";
         $pdo->exec($sql_update);
         
-        echo ('<script> location.replace("index.php?stat=0"); </script>');
+        echo ('<script> location.replace("game.php?stat=0"); </script>');
     } else {
         echo "ERROR";
     }
+
+
+
 ?>

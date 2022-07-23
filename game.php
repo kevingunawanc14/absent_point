@@ -1,12 +1,13 @@
 <?php
 
 require_once("includes/connect.php");
+require_once("includes/navbar.php");
 
-date_default_timezone_set("Asia/Jakarta");
+// date_default_timezone_set("Asia/Jakarta");
 
 // jika belum log in
 if (!isset($_SESSION["username"])) {
-  echo ('<script> location.replace("login.php"); </script>');;
+  echo ('<script> location.replace("login.php"); </script>');
 }
 
 if (isset($_GET["stat"])) {
@@ -15,8 +16,10 @@ if (isset($_GET["stat"])) {
     echo "SUCCESS";
   } else if ($_GET["stat"] == 1) {
     // jika waktu absen tidak sesuai
+    echo "<script> alert('Waktu Absen Tidak Sesuai'); </script>";
   } else if ($_GET["stat"] == 2) {
     // jika sudah pernah absen di waktu itu
+    echo "<script> alert('Anda Sudah Melakukan Absen') </script>";
   }
 }
 ?>
@@ -40,48 +43,15 @@ if (isset($_GET["stat"])) {
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"> <i class="fas fa-fist-raised fa-1x"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="">ABSENT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="">LEADERBOARD</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="">HOW TO PLAY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="">SETTING</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="">LOGOUT</a>
-          </li>
+  
 
-
-        </ul>
-
-        <form class="d-flex">
-
-          <button class="btn btn-outline-dark rounded-pill" type="submit"><?php echo $_SESSION["username"]; ?></button>
-        </form>
-
-      </div>
-    </div>
-  </nav>
 
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
       <div class="col">
         <center><i class="fa-solid fa-cow"></i></center>
-        <h3 style="text-align: center; ">COW 1</h3>
+        <h3 style="text-align: center; ">COW 2</h3>
         <div class="progress">
           <div id="rating" data-rating="0" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="O" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
@@ -214,23 +184,25 @@ if (isset($_GET["stat"])) {
       </center>
     </div>
   </div>
+
+
 </body>
 
 
-<!-- <?php
-      echo "marow <br>";
-      date_default_timezone_set("Asia/Jakarta");
-      echo "Today is " . date("Y/m/d") . "<br>";
-      echo "The time is " . date("H:i:s");
+<?php
+// echo "marow <br>";
+// date_default_timezone_set("Asia/Jakarta");
+// echo "Today is " . date("Y/m/d") . "<br>";
+// echo "The time is " . date("H:i:s");
 
-      echo "<br>";
+// echo "<br>";
 
-      $pagi = date("H") - 07;
-      // $malam =
-      // $siang =
+// $pagi = date("H") - 07;
+// $malam =
+// $siang =
 
-      echo $pagi;
-      ?> -->
+// echo $pagi;
+?>
 
 <script>
   function absent() {
@@ -248,7 +220,9 @@ if (isset($_GET["stat"])) {
     // update data attribute
     data.dataset.rating = dataRating;
 
-    location.replace("add_points.php?poin=" + temp);
+    location.replace("request/add_points.php?poin=" + temp);
+
+    
   }
 </script>
 

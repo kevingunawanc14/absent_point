@@ -2,20 +2,21 @@
 <html lang="en">
 
 <?php
-  require_once("includes/connect.php");
-  
-  if (isset($_POST["masuk"])) {
-    $username = $_POST["_username"];
-    $password = $_POST["_password"];
+require_once("includes/connect.php");
 
-    $stmt_get_user = $pdo->query("SELECT * FROM user WHERE nama = '$username' AND `password` = '$password'");
-    if ($row = $stmt_get_user->fetch()) {
-      $_SESSION["username"] = $username;
-      echo('<script>location.replace("game.php");</script>');
-    } else {
-      echo('<script>location.replace("login.php?stat=0");</script>');
-    }
+if (isset($_POST["masuk"])) {
+  $username = $_POST["_username"];
+  $password = $_POST["_password"];
+
+  $stmt_get_user = $pdo->query("SELECT * FROM user WHERE nama = '$username' AND `password` = '$password'");
+  if ($row = $stmt_get_user->fetch()) {
+    $_SESSION["username"] = $username;
+    echo ('<script>location.replace("game.php");</script>');
+  } else {
+    echo ('<script>location.replace("login.php?stat=0");</script>');
   }
+}
+
 ?>
 
 <head>
@@ -42,13 +43,13 @@
     min-height: 250px;
   }
 
-  .fa-fist-raised{
+  .fa-fist-raised {
     color: red;
   }
 
-  #login_btn{
+  #login_btn {
     margin-top: 45vh;
-    width: 60px; 
+    width: 60px;
     height: 60px;
     border-radius: 17px;
   }
@@ -58,6 +59,10 @@
       margin-top: 9.5vh;
     }
   } */
+
+  a {
+    text-decoration: none;
+  }
 </style>
 
 <body>
@@ -70,15 +75,17 @@
 
       <div class="col-12 col-lg-4" style="background-color: #f9f9f9;">
 
-        <div class="row">
-          <div class="col-6 col-lg-5">
-            <i class="fas fa-fist-raised mt-5 fa-4x" style="float: right;"></i>
+        <a href="index.php" style="cursor: pointer;">
+          <div class="row">
+            <div class="col-6 col-lg-5">
+              <i class="fas fa-fist-raised mt-5 fa-4x" style="float: right;"></i>
+            </div>
+            <div class="col-6 col-lg-7">
+              <h3 class="mt-5" style="color: red; font-weight: bold;"> ABSENT </h3>
+              <h3 style="color: red; font-weight: bold;">POINT</h3>
+            </div>
           </div>
-          <div class="col-6 col-lg-7">
-            <h3 class="mt-5" style="color: red; font-weight: bold;"> ABSENT </h3>
-            <h3  style="color: red; font-weight: bold;">POINT</h3>
-          </div>
-        </div>
+        </a>
 
         <!-- <h1 class="mt-5" style="text-align: center;"><i class="fas fa-fist-raised"></i>
           Absent </h1>
@@ -99,13 +106,16 @@
             if (isset($_GET["stat"])) {
               if ($_GET["stat"] == 0) { ?>
                 <div style="color: red;" class="mt-1">Email or password is incorrect!</div>
-            <?php } } ?>
-            
+            <?php }
+            } ?>
+
           </div>
 
           <center><a href="#"><button type="button submit" id="login_btn" class="btn btn-danger mb-1" name="masuk"><i class="fas fa-arrow-right"></i></button></center></a>
 
-          <a href="create_account.php" style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;"><p>CREATE ACCOUNT</p></a>
+          <a href="create_account.php" style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;">
+            <p>CREATE ACCOUNT</p>
+          </a>
 
           <!-- nemu sesuatu kalo tidak dibungkus tag p di text-align center ga jalan -->
           <!-- <a href="https://www.w3schools.com" style="text-align: center; font-weight: bold; font-size: xx-small; color: black; text-decoration: none;">CREATE ACCOUNT</a> -->

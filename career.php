@@ -1,5 +1,6 @@
 <?php 
-require_once("include/navbar.php"); 
+require_once("includes/connect.php");
+require_once("includes/navbar.php");
 ?>
 <!doctype html>
 <html lang="en">
