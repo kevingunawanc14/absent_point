@@ -9,9 +9,7 @@
     $stmt_user = $pdo->query("SELECT * FROM user WHERE nama = '$username'");
     $id_user = -1;
     if ($row = $stmt_user->fetch()) {
-        if ($row["nama"] == $username) {
             $id_user = $row["id"];
-        }
     }
 
     // echo date("His");
@@ -56,7 +54,7 @@
         $sql_update = "UPDATE `user` SET `rating`=(SELECT rating FROM user WHERE id = $id_user)+$rating WHERE id = $id_user";
         $pdo->exec($sql_update);
         
-        echo ('<script> location.replace("game.php?stat=0"); </script>');
+        echo ('<script> location.replace("../game.php?stat=0"); </script>');
     } else {
         echo "ERROR";
     }

@@ -37,7 +37,7 @@
                     </ul>
                 </div>
 
-                <button class="btn btn-outline-dark rounded-pill" type="submit"><?php echo $_SESSION["username"]; ?></button>
+                <button class="btn btn-outline-dark rounded-pill" type="submit" style="color: white; background-color: #212529; cursor: default"><?php echo $_SESSION["username"]; ?></button>
 
             </form>
         <?php } else { ?>
@@ -86,13 +86,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <p id="kalimatMakeOne" class="mt-2" style="text-align: right; font-size: small;">I don’t have a absent account yet</p>
+                            <p id="kalimatMakeOne" class="mt-2" style="text-align: right; font-size: small;">I don’t have an Absent account yet</p>
                             <center>
                                 <a href="create_account.php"><button id="buttonMakeOne" style="float: right; min-width: 200px;" type="button" class=" btn btn-outline-dark btn-lg mt-1">MAKE ONE</button></a>
                             </center>
                         </div>
                         <div class="col-12 col-sm-6 ">
-                            <p id="kalimatSignIn" class="mt-2" style="text-align: left; font-size: small;">I have a absent account</p>
+                            <p id="kalimatSignIn" class="mt-2" style="text-align: left; font-size: small;">I have an Absent account</p>
                             <center>
                                 <a href="login.php"><button id="buttonSignIn" style="float: left; min-width: 200px;" type="button" class=" btn btn-outline-danger btn-lg mt-1">SIGN IN</button></a>
                             </center>
