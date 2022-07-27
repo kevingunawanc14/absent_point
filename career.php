@@ -41,11 +41,20 @@ require_once("includes/connect.php");
 
       <div class="col-12">
 
-        <!-- <?php
+        <?php
 
-        $sql = 'SELECT * FROM history ';
+        // ambil id_user
+        $sql = 'SELECT * FROM user where nama = ?';
         $checksql = $pdo->prepare($sql);
-        $checksql->execute();
+        $checksql->execute([$_SESSION["username"]]);
+
+        $row = $checksql->fetch();
+
+        $id_user = $row['id'];
+
+        $sql = 'SELECT * FROM history where id_user = ? ';
+        $checksql = $pdo->prepare($sql);
+        $checksql->execute([$id_user]);
 
         $count = 0;
 
@@ -58,7 +67,13 @@ require_once("includes/connect.php");
     
               <div class='card text-center'>
                 <div class='card-header'>
-                <center><i class='fa-solid fa-cow'></i></center>
+                </div>
+                <div class='card-body'>
+                  <h5 class='card-title' style='color: #5cb4a4;'> +{$row['rating']} </h5>
+                </div>
+                <div class='card-footer text-muted'>
+                  {$row['tanggal']},{$row['waktu']}
+                </div>
               </div>
               
                    
@@ -70,36 +85,36 @@ require_once("includes/connect.php");
 
 
 
-        ?> -->
+        ?>
 
-        <div class="card text-center">
-          <div class="card-header">
-            <center><i class="fa-solid fa-cow"></i></center>
+        <!-- <div class="card text-center">
+              <div class="card-header">
+                <center><i class="fa-solid fa-cow"></i></center>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="color: #5cb4a4;">+12</h5>
+              </div>
+              <div class="card-footer text-muted">
+                13-JUL-22 9:08 AM
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title" style="color: #5cb4a4;">+12</h5>
-          </div>
-          <div class="card-footer text-muted">
-            13-JUL-22 9:08 AM
-          </div>
-        </div>
+
+          <div class="col-12 mt-1">
+            <div class="card text-center">
+              <div class="card-header">
+                <center><i class="fa-solid fa-cow"></i></center>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="color: #5cb4a4;">+11</h5>
+              </div>
+              <div class="card-footer text-muted">
+                13-JUL-22 9:08 AM
+              </div>
+            </div>
+          </div> -->
+
       </div>
-
-      <div class="col-12 mt-1">
-        <div class="card text-center">
-          <div class="card-header">
-            <center><i class="fa-solid fa-cow"></i></center>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title" style="color: #5cb4a4;">+11</h5>
-          </div>
-          <div class="card-footer text-muted">
-            13-JUL-22 9:08 AM
-          </div>
-        </div>
-      </div>
-
-
     </div>
   </div>
 
