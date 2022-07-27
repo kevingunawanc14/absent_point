@@ -68,84 +68,96 @@ $rating = $row["rating"];
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
-      <div class="col">
-        <center><?php 
-        
-        if ($row['rating'] <= 100) {
-          echo "
+      <div id="rank" class="col">
+        <center><?php
+
+                if ($row['rating'] <= 100) {
+                  echo "
 
           <i class='fa-solid fa-cow'></i>
 
             ";
-        } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
-          echo "
+                } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
+                  echo "
 
           <i class='fa-solid fa-dog'></i>
           
           ";
-        } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
-          echo "
+                } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
+                  echo "
 
           <i class='fa-solid fa-hippo'></i>
           
           ";
-        } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
-          echo "
+                } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
+                  echo "
 
           <i class='fa-solid fa-otter'></i>
           
           ";
-        } else if ($row['rating'] >= 401) {
-          echo "
+                } else if ($row['rating'] >= 401) {
+                  echo "
 
          <i class='fa-solid fa-dragon'></i>
           
           ";
-        }
-        
-        
-        
-        ?></center>
-        <h3 style="text-align: center; "><?php 
-        
-        
-        if ($row['rating'] <= 100) {
-          echo "
+                }
+
+
+
+                ?></center>
+        <h3 class="namaRank" style="text-align: center; "><?php
+
+
+                                          if ($row['rating'] <= 100) {
+                                            echo "
 
             COW
 
             ";
-        } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
-          echo "
+                                          } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
+                                            echo "
 
            DOG
           
           ";
-        } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
-          echo "
+                                          } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
+                                            echo "
 
            HIPPO
           
           ";
-        } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
-          echo "
+                                          } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
+                                            echo "
 
           OTTER
           
           ";
-        } else if ($row['rating'] >= 401) {
-          echo "
+                                          } else if ($row['rating'] >= 401) {
+                                            echo "
 
          DRAGON
           
           ";
-        }
-        
-        
-        
-        ?></h3>
+                                          }
+
+
+
+                                          ?></h3>
         <div class="progress">
-          <div id="rating" data-rating="0" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="O" aria-valuemin="0" aria-valuemax="100"></div>
+          <div id="rating"  class="progress-bar bg-success" role="progressbar" style="width: 
+          <?php
+          // rumus
+          $prosentanseBar = $row['rating'] / 400 * 100;
+
+          echo $prosentanseBar . "%";
+          // echo $row['rating']."%" 
+
+
+
+
+
+          ?>" aria-valuenow="O" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
     </div>
@@ -181,6 +193,7 @@ $rating = $row["rating"];
               $pagi = "Morning";
               $siang = "Afternoon";
               $malam = "Night";
+              
 
               if ($waktu_sekarang >= 5 && $waktu_sekarang <= 7) {
                 echo
@@ -285,27 +298,65 @@ $rating = $row["rating"];
 
 
 <script>
+
+  // function absent() {
+  //   const data = document.querySelector('#rating');
+
+  //   // get data attribute
+  //   dataRating = parseInt(data.dataset.rating);
+  //   // tambah data sesuai random-an
+  //   dataRating += parseInt(Math.floor(Math.random() * 4) + 10);
+  //   // update angka progress bar
+  //   document.getElementById("angkaRating").innerHTML = dataRating + "/100"
+  //   // update panjang progress bar
+  //   var temp = dataRating;
+  //   dataRating = document.getElementById("rating").style.width = dataRating + "%";
+  //   // update data attribute
+  //   data.dataset.rating = dataRating;
+
+  //   location.replace("request/add_points.php?poin=" + temp);
+
+
+  // }
+
+
   function absent() {
-    const data = document.querySelector('#rating');
-
-    // get data attribute
-    dataRating = parseInt(data.dataset.rating);
-    // tambah data sesuai random-an
-    dataRating += parseInt(Math.floor(Math.random() * 4) + 10);
-    // update angka progress bar
-    document.getElementById("angkaRating").innerHTML = dataRating + "/100"
-    // update panjang progress bar
-    var temp = dataRating;
-    dataRating = document.getElementById("rating").style.width = dataRating + "%";
-    // update data attribute
-    data.dataset.rating = dataRating;
-
-    location.replace("request/add_points.php?poin=" + temp);
 
 
+
+    let username = document.getElementById("usernameButton").innerHTML
+   
+
+    let formAbsent = new FormData();
+
+    formAbsent.append("username", username);
+
+
+
+
+
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.onload = function() {
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+
+        document.getElementById("angkaRating").innerHTML = 
+        document.getElementById("rating").innerHTML = 
+        document.getElementById("namaRank").innerHTML = 
+        document.getElementById("rank").innerHTML = 
+
+
+
+
+
+        alert("Absent Berhasil Silakan Tunggu .. Jam Lagi Untuk Absent Kembali")
+
+      } else {
+        alert("Error!");
+      }
+    }
+    xmlHttp.open("POST", "request/absent_ajax.php");
+    xmlHttp.send(formAbsent);
   }
-
-  
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

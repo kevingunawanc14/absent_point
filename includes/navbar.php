@@ -40,7 +40,7 @@
                     </ul>
                 </div> -->
 
-                <button class="btn btn-outline-dark rounded-pill" type="button" style="color: white; background-color: #212529; cursor: default"><?php echo $_SESSION["username"]; ?></button>
+                <button id="usernameButton" class="btn btn-outline-dark rounded-pill" type="button" style="color: white; background-color: #212529; cursor: default"><?php echo $_SESSION["username"]; ?></button>
 
             </form>
         <?php } else { ?>

@@ -1,5 +1,7 @@
 <?php
 require_once("includes/connect.php");
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,6 +28,9 @@ require_once("includes/connect.php");
 
 
   ?>
+
+
+
   <center>
     <h1 class="display-5 mt-5 mb-5">Career History</h1>
   </center>
@@ -35,6 +40,38 @@ require_once("includes/connect.php");
     <div class="row">
 
       <div class="col-12">
+
+        <?php
+
+        $sql = 'SELECT * FROM history ';
+        $checksql = $pdo->prepare($sql);
+        $checksql->execute();
+
+        $count = 0;
+
+        while ($row = $checksql->fetch()) {
+          $count += 1;
+
+
+
+          echo    "
+    
+              <div class='card text-center'>
+                <div class='card-header'>
+                <center><i class='fa-solid fa-cow'></i></center>
+              </div>
+              
+                   
+        
+                
+
+            ";
+        }
+
+
+
+        ?>
+
         <div class="card text-center">
           <div class="card-header">
             <center><i class="fa-solid fa-cow"></i></center>
