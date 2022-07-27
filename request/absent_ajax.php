@@ -44,13 +44,13 @@ while ($row = $checksql->fetch()) {
     // change time format from hh:mm:ss -> hhmmss
     $new_time = date("His", strtotime($row["waktu"]));
 
-    if ($new_time >= 50000 && $new_time <= 70000) {
+    if ($pagi && $new_time >= 50000 && $new_time <= 70000) {
         // echo ('<script> location.replace("../game.php?stat=2"); </script>');
         exit("Anda Sudah Melakukan Absent Pagi Atau Waktu Absent Pagi Sudah Terlewat !");
-    } else if ($new_time >= 110000 && $new_time <= 130000) {
+    } else if ($siang && $new_time >= 110000 && $new_time <= 130000) {
         // echo ('<script> location.replace("../game.php?stat=2"); </script>');
         exit("Anda Sudah Melakukan Absent Siang Atau Absent Siang Sudah Terlewat !");
-    } else if ($new_time >= 170000 && $new_time <= 190000) {
+    } else if ($malam && $new_time >= 170000 && $new_time <= 190000) {
         // echo ('<script> location.replace("../game.php?stat=2"); </script>');
         exit("Anda Sudah Melakukan Absent Malam Atau Absent Malam Sudah Terlewat !");
     }
