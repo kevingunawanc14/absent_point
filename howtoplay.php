@@ -121,7 +121,7 @@ require_once("includes/connect.php");
 
         <p>
             At the end of the month: <br>
-            - User with the highest rank & most points will get a reward with 125 vp. <br>
+            - User with the highest rank & most points will get a reward with 125 vp at the end of the month. <br>
             - Ranking and points will be reset every month.
         </p>
 
