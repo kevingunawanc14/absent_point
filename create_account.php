@@ -121,6 +121,7 @@ require_once("includes/connect.php");
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 
           alert(this.responseText);
+          window.location.href = "http://localhost/absent_point/login.php";
 
 
         } else {
