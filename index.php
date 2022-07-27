@@ -38,9 +38,24 @@ require_once("includes/connect.php");
     <center style="margin-top: 25vh;">
         <p>A absent game point-based get reward</p>
         <h1 class="display-1">ABSENT POINT</h1>
-        <?php if (!isset($_SESSION["username"])) { ?>
+        <?php if (!isset($_SESSION["username"])) {
+
+        ?>
+
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">PLAY FREE</button>
-        <?php } ?>
+
+        <?php } else {
+
+
+
+
+        ?>
+            <a href="game.php"><button type="button" class="btn btn-outline-danger">ABSENT NOW</button></a>
+        <?php
+
+        }
+
+        ?>
     </center>
 
     <div class="border-top border-1" style="margin-top: 50vh;">
