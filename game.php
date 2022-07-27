@@ -163,24 +163,17 @@ if (isset($_GET["stat"])) {
                   
                   <p>$siang</p>
   
-                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 05.00 - 07.00</button>
+                  <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 11.00 - 13.00</button>
                   
   
                   <p>$malam</p>
                   
-                  <button type='button' class='btn btn-danger mb-3'  onclick='absent()'  >Absent avabile at 05.00 - 07.00</button>
+                  <button type='button' class='btn btn-danger mb-3'  disabled  >Absent avabile at 17.00 - 19.00</button>
 
        
                   ";
               } ?>
 
-              <!-- <P>26-June-2022</P>
-              <p>Pagi</p>
-              <button type="button" class="btn btn-secondary" data-jam="" >Absent avabile at 05.00-07.00</button>
-              <p>Siang</p>
-              <button type="button" class="btn btn-secondary" data-jam="11.00" onclick='absent(this.getAttribute("data-jam"))' >Absent avabile at 11.00-13.00</button>
-              <p>Malam</p>
-              <button type="button" class="btn btn-secondary" data-jam="17.00" onclick="absent(this.getAttribute('data-jam'))">Absent avabile at 17.00-20.00</button> -->
 
             </div>
           </div>
@@ -190,23 +183,18 @@ if (isset($_GET["stat"])) {
   </div>
 
 
+  <div class="border-top border-1 bg-light" style="margin-top: 40vh; min-height: 20vh;">
+    <?php
+
+    require_once("includes/credit.php");
+
+    ?>
+  </div>
+
 </body>
 
 
-<?php
-// echo "marow <br>";
-// date_default_timezone_set("Asia/Jakarta");
-// echo "Today is " . date("Y/m/d") . "<br>";
-// echo "The time is " . date("H:i:s");
 
-// echo "<br>";
-
-// $pagi = date("H") - 07;
-// $malam =
-// $siang =
-
-// echo $pagi;
-?>
 
 <script>
   function absent() {

@@ -28,7 +28,7 @@ require_once("includes/connect.php");
     <?php
 
     require_once("includes/navbar.php");
-    
+
     ?>
 
 
@@ -67,8 +67,12 @@ require_once("includes/connect.php");
     </div>
 
 
-    <div style="margin-top: 100px;">
-        credit
+    <div class="border-top border-1 bg-light" style="margin-top: 50vh; min-height: 20vh;">
+        <?php
+
+        require_once("includes/credit.php");
+
+        ?>
     </div>
 
 

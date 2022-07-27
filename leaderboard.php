@@ -51,6 +51,7 @@ require_once("includes/connect.php");
     <div class="row">
       <div class="col">
         <table class="table table-hover" id="tablePerusahaan">
+
           <thead>
             <tr>
               <th><i class="fa-solid fa-dragon"></i></th>
@@ -60,96 +61,101 @@ require_once("includes/connect.php");
               <th data-orderable='false'>REWARD <i class="fa-solid fa-gift"></i></th>
             </tr>
           </thead>
+
           <tbody>
-            <tr>
-              <td>1</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_maro</td>
-              <td>10</td>
-              <td>125 VP</td>
 
-            </tr>
-            <tr>
-              <td>2</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+            <?php
 
-            </tr>
-            <tr>
-              <td>3</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+            $sql = 'SELECT * FROM user ORDER BY RATING DESC';
+            $checksql = $pdo->prepare($sql);
+            $checksql->execute();
 
-            </tr>
-            <tr>
-              <td>4</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+            $count = 0;
 
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+            while ($row = $checksql->fetch()) {
+              $count += 1;
 
-            </tr>
-            <tr>
-              <td>6</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
 
-            </tr>
-            <tr>
-              <td>7</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+              echo    "
+    
+                      <tr>
 
-            </tr>
-            <tr>
-              <td>8</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+                          <td>  {$count}  </td>
+   
 
-            </tr>
-            <tr>
-              <td>9</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+                    ";
 
-            </tr>
-            <tr>
-              <td>10</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+                            if ($row['rating'] <= 100) {
+                              echo "
 
-            </tr>
-            <tr>
-              <td>11</td>
-              <td><i class="fa-solid fa-cow"></td>
-              <td>king_toni</td>
-              <td>0</td>
-              <td>-</td>
+                              <td><i class='fa-solid fa-cow'></i></td>
 
-            </tr>
+                                ";
+                            } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
+                              echo "
 
+                              <td><i class='fa-solid fa-dog'></i></td>
+                              
+                              ";
+                            } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
+                              echo "
+
+                              <td><i class='fa-solid fa-hippo'></i></td>
+                              
+                              ";
+                            } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
+                              echo "
+
+                              <td><i class='fa-solid fa-otter'></i></td>
+                              
+                              ";
+                            } else if ($row['rating'] >= 401) {
+                              echo "
+
+                              <td> <i class='fa-solid fa-dragon'></i></td>
+                              
+                              ";
+                            }
+
+                        echo "
+
+                            
+                            <td>  {$row['nama']}  </td>
+                            <td>  {$row['rating']}  </td>
+
+                            ";
+                            
+
+                            if ($count == 1) {
+                              echo "
+
+                              <td>125</td>
+
+                                ";
+                            } else{
+                              echo "
+
+                              <td>-</td>
+
+                                ";
+                            }
+                echo "
+
+                  </tr>
+
+                    ";
+
+                            
+
+              
+              
+              
+
+            }
+
+
+
+            ?>
 
           </tbody>
 
@@ -160,6 +166,13 @@ require_once("includes/connect.php");
   </div>
 
 
+  <div class="border-top border-1 bg-light" style="margin-top: 50vh; min-height: 20vh;">
+    <?php
+
+    require_once("includes/credit.php");
+
+    ?>
+  </div>
 
 
 
@@ -168,6 +181,7 @@ require_once("includes/connect.php");
       table = $('#tablePerusahaan').DataTable();
     });
   </script>
+
 
 
 

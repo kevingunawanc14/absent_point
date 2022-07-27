@@ -29,7 +29,7 @@
 
             <form class="d-flex me-4">
 
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <button class="btn btn-outline-dark me-2 rounded-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-globe"></i>
                     </button>
@@ -38,9 +38,9 @@
                         <li><a class="dropdown-item" href="#">INDONESIAN <i class="fa-solid fa-check "></i></a></li>
 
                     </ul>
-                </div>
+                </div> -->
 
-                <button class="btn btn-outline-dark rounded-pill" type="submit" style="color: white; background-color: #212529; cursor: default"><?php echo $_SESSION["username"]; ?></button>
+                <button class="btn btn-outline-dark rounded-pill" type="button" style="color: white; background-color: #212529; cursor: default"><?php echo $_SESSION["username"]; ?></button>
 
             </form>
         <?php } else { ?>
@@ -54,7 +54,7 @@
             </ul>
             <form class="d-flex me-4">
 
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <button class="btn btn-outline-dark me-2 rounded-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-globe"></i>
                     </button>
@@ -63,7 +63,7 @@
                         <li><a class="dropdown-item" href="#">INDONESIAN <i class="fa-solid fa-check "></i></a></li>
 
                     </ul>
-                </div>
+                </div> -->
 
                 <button class="btn btn-outline-dark rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">PLAY NOW</button>
             </form>

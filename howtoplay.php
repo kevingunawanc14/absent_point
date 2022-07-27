@@ -121,8 +121,8 @@ require_once("includes/connect.php");
 
         <p>
             At the end of the month: <br>
-            - user with the highest rank & most points will get a reward. <br>
-            - ranking and points will be reset every month.
+            - User with the highest rank & most points will get a reward. <br>
+            - Ranking and points will be reset every month.
         </p>
 
         <div class="row mt-5 mb-5">
@@ -190,6 +190,18 @@ require_once("includes/connect.php");
                 </div>
             </div>
         </div>
+    </div>
+
+
+
+
+    
+    <div class="border-top border-1 bg-light" style="margin-top: 20vh; min-height: 20vh;">
+        <?php
+
+        require_once("includes/credit.php");
+
+        ?>
     </div>
 
 </body>
