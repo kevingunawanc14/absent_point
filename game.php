@@ -68,82 +68,82 @@ $rating = $row["rating"];
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
-      <div  class="col">
+      <div class="col">
         <center id="rank"><?php
 
-                if ($row['rating'] <= 100) {
-                  echo "
+                          if ($row['rating'] <= 100) {
+                            echo "
 
           <i class='fa-solid fa-cow'></i>
 
             ";
-                } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
-                  echo "
+                          } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
+                            echo "
 
           <i class='fa-solid fa-dog'></i>
           
           ";
-                } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
-                  echo "
+                          } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
+                            echo "
 
           <i class='fa-solid fa-hippo'></i>
           
           ";
-                } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
-                  echo "
+                          } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
+                            echo "
 
           <i class='fa-solid fa-otter'></i>
           
           ";
-                } else if ($row['rating'] >= 401) {
-                  echo "
+                          } else if ($row['rating'] >= 401) {
+                            echo "
 
          <i class='fa-solid fa-dragon'></i>
           
           ";
-                }
+                          }
 
 
 
-                ?></center>
+                          ?></center>
         <h3 id="namaRank" style="text-align: center; "><?php
 
 
-                                                          if ($row['rating'] <= 100) {
-                                                            echo "
+                                                        if ($row['rating'] <= 100) {
+                                                          echo "
 
             COW
 
             ";
-                                                          } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
-                                                            echo "
+                                                        } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
+                                                          echo "
 
            DOG
           
           ";
-                                                          } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
-                                                            echo "
+                                                        } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
+                                                          echo "
 
            HIPPO
           
           ";
-                                                          } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
-                                                            echo "
+                                                        } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
+                                                          echo "
 
           OTTER
           
           ";
-                                                          } else if ($row['rating'] >= 401) {
-                                                            echo "
+                                                        } else if ($row['rating'] >= 401) {
+                                                          echo "
 
          DRAGON
           
           ";
-                                                          }
+                                                        }
 
 
 
-                                                          ?></h3>
+                                                        ?></h3>
         <div class="progress">
           <div id="rating" class="progress-bar bg-success" role="progressbar" style="width: 
           <?php
@@ -233,7 +233,7 @@ $rating = $row["rating"];
 
        
                   ";
-              } else if ($waktu_sekarang >= 15 && $waktu_sekarang <= 18) {
+              } else if ($waktu_sekarang >= 17 && $waktu_sekarang <= 18) {
                 echo
 
                 "
@@ -298,7 +298,6 @@ $rating = $row["rating"];
 
 
 <script>
-
   // function absent() {
   //   const data = document.querySelector('#rating');
 
@@ -325,9 +324,9 @@ $rating = $row["rating"];
 
 
     let username = document.getElementById("usernameButton").innerHTML
-    let rating = parseInt(document.getElementById("angkaRating").innerHTML); 
+    let rating = parseInt(document.getElementById("angkaRating").innerHTML);
 
-    rating+=parseInt(Math.floor(Math.random() * 4) + 10);
+    rating += parseInt(Math.floor(Math.random() * 4) + 10);
 
     let formAbsent = new FormData();
 
@@ -343,12 +342,22 @@ $rating = $row["rating"];
 
         if (this.responseText == "Anda Sudah Melakukan Absent Atau Waktu Absent Sudah Terlewat !") {
           alert("Anda Sudah Melakukan Absent Atau Waktu Absent Sudah Terlewat !");
+
+        } else if (this.responseText == "Anda Sudah Melakukan Absent Pagi Atau Waktu Absent Pagi Sudah Terlewat !") {
+          alert("Anda Sudah Melakukan Absent Pagi Atau Waktu Absent Pagi Sudah Terlewat !");
+
+        } else if (this.responseText == "Anda Sudah Melakukan Absent Siang Atau Absent Siang Sudah Terlewat !") {
+          alert("Anda Sudah Melakukan Absent Siang Atau Absent Siang Sudah Terlewat ");
+
+        } else if (this.responseText == "Anda Sudah Melakukan Absent Malam Atau Absent Malam Sudah Terlewat !") {
+          alert("Anda Sudah Melakukan Absent Malam Atau Absent Malam Sudah Terlewat !");
+
         } else {
 
           data = JSON.parse(this.responseText);
 
           // data[0]['rating'] = Math.floor(Math.random() * 500) + 100;
-          
+
           // icon rank
           // nama rank
           if (data[0]['rating'] <= 100) {
@@ -357,7 +366,7 @@ $rating = $row["rating"];
             document.getElementById("namaRank").innerHTML = "COW";
 
           } else if (data[0]['rating'] <= 200) {
-            
+
             document.getElementById("rank").innerHTML = "<i class='fa-solid fa-dog'></i>";
             document.getElementById("namaRank").innerHTML = "DOG";
 
@@ -384,11 +393,13 @@ $rating = $row["rating"];
 
           // angka rating
           document.getElementById("angkaRating").innerHTML = data[0]['rating'];
+
           // progress bar
           // rumus
           $prosentanseBar = data[0]['rating'] / 400 * 100;
-          document.getElementById("rating").style.width = $prosentanseBar+"%";
+          document.getElementById("rating").style.width = $prosentanseBar + "%";
 
+          alert("Absent Berhasil")
 
         }
 

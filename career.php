@@ -41,7 +41,7 @@ require_once("includes/connect.php");
 
       <div class="col-12">
 
-        <?php
+        <!-- <?php
 
         $sql = 'SELECT * FROM history ';
         $checksql = $pdo->prepare($sql);
@@ -70,7 +70,7 @@ require_once("includes/connect.php");
 
 
 
-        ?>
+        ?> -->
 
         <div class="card text-center">
           <div class="card-header">

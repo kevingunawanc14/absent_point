@@ -90,26 +90,26 @@ require_once("includes/connect.php");
             <h1 class="display-5 mb-5">HOW TO PLAY</h1>
         </center>
         <div class="row mt-3">
-            <div class="col-lg-4 col-12 zoom">
-                <div class="border">
+            <div class="col-lg-4 col-12 zoom" >
+                <div class="border" style="min-height: 300px;">
                     <p style="text-align: center;" class="m-1">1. Click the button on the main page at the specified time to obtain points!</p>
-                    <center><img src="https://images.unsplash.com/photo-1647531452166-3584eb58e6e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="gambar 3 button" class="mt-3 img-fluid"></center>
+                    <center><img src="assets/STEP1.png" alt="gambar 3 button" class="mt-3 img-fluid"></center>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-12 zoom">
-                <div class="border">
+            <div class="col-lg-4 col-12 zoom" >
+                <div class="border" style="min-height: 300px;">
                     <p style="text-align: center;" class="m-1"> 2. Points are used to rank up!</p>
                     <div style="color: white;">...</div>
-                    <center><img src="https://images.unsplash.com/photo-1647531452166-3584eb58e6e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="gambar progress bar" class="mt-3 img-fluid"></center>
+                    <center><img src="assets/STEP2.png" alt="gambar progress bar" class="mt-3 img-fluid"></center>
 
                 </div>
             </div>
 
-            <div class="col-lg-4 col-12 zoom">
-                <div class="border">
+            <div class="col-lg-4 col-12 zoom" >
+                <div class="border" style="min-height: 300px;">
                     <p style="text-align: center;" class="m-1">3. Reach the highest rank to get reward at the end of each month!</p>
-                    <center><img src="https://images.unsplash.com/photo-1647531452166-3584eb58e6e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="gambar leaderboard" class="mt-3 img-fluid"></center>
+                    <center><img src="assets/STEP3.png" alt="gambar leaderboard" class="mt-3 img-fluid"></center>
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@ require_once("includes/connect.php");
 
         <p>
             At the end of the month: <br>
-            - User with the highest rank & most points will get a reward. <br>
+            - User with the highest rank & most points will get a reward with 125 vp. <br>
             - Ranking and points will be reset every month.
         </p>
 

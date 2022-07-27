@@ -129,7 +129,7 @@ require_once("includes/connect.php");
                             if ($count == 1) {
                               echo "
 
-                              <td>125</td>
+                              <td>125 VP</td>
 
                                 ";
                             } else{
