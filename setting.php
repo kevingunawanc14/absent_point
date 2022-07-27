@@ -1,6 +1,5 @@
 <?php
 require_once("includes/connect.php");
-require_once("includes/navbar.php");
 
 
 
@@ -22,7 +21,13 @@ require_once("includes/navbar.php");
 
 <body>
 
-   
+
+    <?php
+
+    require_once("includes/navbar.php");
+
+    ?>
+
 
 
     <div class="container">

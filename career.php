@@ -1,6 +1,5 @@
-<?php 
+<?php
 require_once("includes/connect.php");
-require_once("includes/navbar.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,11 +15,20 @@ require_once("includes/navbar.php");
   <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <title>Hello, world!</title>
+  <title>History</title>
 </head>
 
 <body>
-  <h1>Career History</h1>
+
+  <?php
+
+  require_once("includes/navbar.php");
+
+
+  ?>
+  <center>
+    <h1 class="display-5 mt-5 mb-5">Career History</h1>
+  </center>
 
 
   <div class="container">

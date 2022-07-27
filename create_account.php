@@ -89,9 +89,11 @@ require_once("includes/connect.php");
 
 
       </div>
+
       <div class="col-12 col-lg-8 bgLogin">
 
       </div>
+      
     </div>
 
 
@@ -100,6 +102,7 @@ require_once("includes/connect.php");
 
 
   <script>
+
     function createAccount() {
 
       let username = document.getElementById("username").value
@@ -128,6 +131,8 @@ require_once("includes/connect.php");
       xmlHttp.send(DataAkun);
 
     }
+
+
   </script>
 
 

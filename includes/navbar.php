@@ -11,6 +11,9 @@
                         <a class="nav-link" aria-current="page" href="game.php">ABSENT</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="career.php">CAREER</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="leaderboard.php">LEADERBOARD</a>
                     </li>
                     <li class="nav-item">

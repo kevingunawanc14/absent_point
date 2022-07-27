@@ -1,7 +1,6 @@
 <?php
 
 require_once("includes/connect.php");
-require_once("includes/navbar.php");
 
 // date_default_timezone_set("Asia/Jakarta");
 
@@ -43,7 +42,12 @@ if (isset($_GET["stat"])) {
 
 <body>
 
-  
+  <?php
+
+  require_once("includes/navbar.php");
+
+
+  ?>
 
 
   <!-- rank -->
@@ -222,7 +226,7 @@ if (isset($_GET["stat"])) {
 
     location.replace("request/add_points.php?poin=" + temp);
 
-    
+
   }
 </script>
 

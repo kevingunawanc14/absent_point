@@ -87,7 +87,6 @@ require_once("includes/connect.php");
 
     <div class="container mt-5">
         <center>
-            <i class="fa-solid fa-gamepad fa-4x"></i>
             <h1 class="display-5 mb-5">HOW TO PLAY</h1>
         </center>
         <div class="row mt-3">
@@ -115,11 +114,11 @@ require_once("includes/connect.php");
             </div>
         </div>
 
-        <br><br><br>
+       
         <center>
-            <i class="fa-solid fa-ranking-star fa-4x"></i>
-            <h2 class="display-5">RANKING</h2>
+            <h2 class="display-5 mt-5">RANKING</h2>
         </center>
+
         <p>
             At the end of the month: <br>
             - user with the highest rank & most points will get a reward. <br>
