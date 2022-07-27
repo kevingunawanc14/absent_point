@@ -298,6 +298,7 @@ $rating = $row["rating"];
 
 
 <script>
+
   // function absent() {
   //   const data = document.querySelector('#rating');
 
@@ -324,12 +325,14 @@ $rating = $row["rating"];
 
 
     let username = document.getElementById("usernameButton").innerHTML
+    let rating = parseInt(document.getElementById("angkaRating").innerHTML); 
 
+    rating+=parseInt(Math.floor(Math.random() * 4) + 10);
 
     let formAbsent = new FormData();
 
     formAbsent.append("username", username);
-
+    formAbsent.append("rating", rating);
 
 
 
@@ -344,9 +347,8 @@ $rating = $row["rating"];
 
           data = JSON.parse(this.responseText);
 
-          data[0]['rating'] = Math.floor(Math.random() * 500) + 100;
+          // data[0]['rating'] = Math.floor(Math.random() * 500) + 100;
           
-          alert(data[0]['rating'])
           // icon rank
           // nama rank
           if (data[0]['rating'] <= 100) {

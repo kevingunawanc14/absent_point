@@ -4,6 +4,7 @@ require_once '../includes/connect.php';
 
 
 $username = $_POST["username"];
+$rating = $_POST["rating"];
 
 // check apakah absent sesuai jamnnya  
 $pagi = false;
@@ -39,13 +40,21 @@ $malam = false;
 // }
 
 
-// // insert history
-// $sql_insert = "INSERT INTO `history`(`id`, `tanggal`, `waktu`, `rating`, `id_user`) VALUES (NULL,'$tanggal','$waktu',$rating,$id_user)";
-// $pdo->exec($sql_insert);
+// insert history
+$sql = 'UPDATE  user 
+SET rating= ?
+WHERE nama = ? ';
 
-// // update rating
-// $sql_update = "UPDATE `user` SET `rating`=(SELECT rating FROM user WHERE id = $id_user)+$rating WHERE id = $id_user";
-// $pdo->exec($sql_update);
+$checksql = $pdo->prepare($sql);
+$checksql->execute([$rating,$username]);
+
+// update rating
+$sql = 'UPDATE  user 
+SET rating= ?
+WHERE nama = ? ';
+
+$checksql = $pdo->prepare($sql);
+$checksql->execute([$rating,$username]);
 
 
 $sql = 'SELECT * FROM user WHERE nama = ?';
