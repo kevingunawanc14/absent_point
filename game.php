@@ -68,8 +68,8 @@ $rating = $row["rating"];
   <!-- rank -->
   <div class="container mt-5">
     <div class="row">
-      <div id="rank" class="col">
-        <center><?php
+      <div  class="col">
+        <center id="rank"><?php
 
                 if ($row['rating'] <= 100) {
                   echo "
@@ -106,46 +106,46 @@ $rating = $row["rating"];
 
 
                 ?></center>
-        <h3 class="namaRank" style="text-align: center; "><?php
+        <h3 id="namaRank" style="text-align: center; "><?php
 
 
-                                          if ($row['rating'] <= 100) {
-                                            echo "
+                                                          if ($row['rating'] <= 100) {
+                                                            echo "
 
             COW
 
             ";
-                                          } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
-                                            echo "
+                                                          } else if ($row['rating'] >= 101 && $row['rating'] <= 200) {
+                                                            echo "
 
            DOG
           
           ";
-                                          } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
-                                            echo "
+                                                          } else if ($row['rating'] >= 201 && $row['rating'] <= 300) {
+                                                            echo "
 
            HIPPO
           
           ";
-                                          } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
-                                            echo "
+                                                          } else if ($row['rating'] >= 301 && $row['rating'] <= 400) {
+                                                            echo "
 
           OTTER
           
           ";
-                                          } else if ($row['rating'] >= 401) {
-                                            echo "
+                                                          } else if ($row['rating'] >= 401) {
+                                                            echo "
 
          DRAGON
           
           ";
-                                          }
+                                                          }
 
 
 
-                                          ?></h3>
+                                                          ?></h3>
         <div class="progress">
-          <div id="rating"  class="progress-bar bg-success" role="progressbar" style="width: 
+          <div id="rating" class="progress-bar bg-success" role="progressbar" style="width: 
           <?php
           // rumus
           $prosentanseBar = $row['rating'] / 400 * 100;
@@ -193,9 +193,9 @@ $rating = $row["rating"];
               $pagi = "Morning";
               $siang = "Afternoon";
               $malam = "Night";
-              
 
-              if ($waktu_sekarang >= 5 && $waktu_sekarang <= 7) {
+
+              if ($waktu_sekarang >= 5 && $waktu_sekarang <= 6) {
                 echo
 
                 "
@@ -213,7 +213,7 @@ $rating = $row["rating"];
                   <button type='button' class='btn btn-danger mb-3'  disabled >Absent avabile at 17.00 - 19.00</button>
 
                 ";
-              } else if ($waktu_sekarang >= 11 && $waktu_sekarang <= 13) {
+              } else if ($waktu_sekarang >= 11 && $waktu_sekarang <= 12) {
                 echo
 
                 "
@@ -233,7 +233,7 @@ $rating = $row["rating"];
 
        
                   ";
-              } else if ($waktu_sekarang >= 17 && $waktu_sekarang <= 20) {
+              } else if ($waktu_sekarang >= 15 && $waktu_sekarang <= 18) {
                 echo
 
                 "
@@ -298,7 +298,6 @@ $rating = $row["rating"];
 
 
 <script>
-
   // function absent() {
   //   const data = document.querySelector('#rating');
 
@@ -325,7 +324,7 @@ $rating = $row["rating"];
 
 
     let username = document.getElementById("usernameButton").innerHTML
-   
+
 
     let formAbsent = new FormData();
 
@@ -339,16 +338,68 @@ $rating = $row["rating"];
     xmlHttp.onload = function() {
       if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 
-        document.getElementById("angkaRating").innerHTML = 
-        document.getElementById("rating").innerHTML = 
-        document.getElementById("namaRank").innerHTML = 
-        document.getElementById("rank").innerHTML = 
+        if (this.responseText == "Anda Sudah Melakukan Absent Atau Waktu Absent Sudah Terlewat !") {
+          alert("Anda Sudah Melakukan Absent Atau Waktu Absent Sudah Terlewat !");
+        } else {
+
+          data = JSON.parse(this.responseText);
+
+          data[0]['rating'] = Math.floor(Math.random() * 500) + 100;
+          
+          alert(data[0]['rating'])
+          // icon rank
+          // nama rank
+          if (data[0]['rating'] <= 100) {
+
+            document.getElementById("rank").innerHTML = "<i class='fa-solid fa-cow'></i>";
+            document.getElementById("namaRank").innerHTML = "COW";
+
+          } else if (data[0]['rating'] <= 200) {
+            
+            document.getElementById("rank").innerHTML = "<i class='fa-solid fa-dog'></i>";
+            document.getElementById("namaRank").innerHTML = "DOG";
+
+
+          } else if (data[0]['rating'] <= 300) {
+
+            document.getElementById("rank").innerHTML = "<i class='fa-solid fa-hippo'></i>";
+            document.getElementById("namaRank").innerHTML = "HIPPO";
+
+
+          } else if (data[0]['rating'] <= 400) {
+
+            document.getElementById("rank").innerHTML = "<i class='fa-solid fa-otter'></i>";
+            document.getElementById("namaRank").innerHTML = "OTTER";
+
+
+          } else if (data[0]['rating'] > 400) {
+
+            document.getElementById("rank").innerHTML = "<i class='fa-solid fa-dragon'></i>";
+            document.getElementById("namaRank").innerHTML = "DRAGON";
+
+
+          }
+
+          // angka rating
+          document.getElementById("angkaRating").innerHTML = data[0]['rating'];
+          // progress bar
+          // rumus
+          $prosentanseBar = data[0]['rating'] / 400 * 100;
+          document.getElementById("rating").style.width = $prosentanseBar+"%";
+
+
+        }
+
+
+
+        // document.getElementById("angkaRating").innerHTML = 
+        // document.getElementById("rating").innerHTML = 
+        // document.getElementById("namaRank").innerHTML = 
+        // document.getElementById("rank").innerHTML = 
 
 
 
 
-
-        alert("Absent Berhasil Silakan Tunggu .. Jam Lagi Untuk Absent Kembali")
 
       } else {
         alert("Error!");
